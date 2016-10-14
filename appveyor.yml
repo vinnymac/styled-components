@@ -20,9 +20,9 @@ init:
 install:
   # Install the latest stable version of Node
   - ps: Install-Product node $env:nodejs_version
-  - npm -g install npm
+  - npm i -g yarn
   - set PATH=%APPDATA%\npm;%PATH%
-  - npm install
+  - yarn
 
 # Disable automatic builds
 build: off
@@ -36,5 +36,6 @@ test_script:
   # Output debugging info
   - node --version
   - npm --version
+  - yarn --version
   # run build and run tests
   - npm run lint && npm run test
